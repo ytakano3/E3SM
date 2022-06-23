@@ -522,10 +522,6 @@ contains
          long_name='pft weight relative to corresponding topounit', units='',         &
          interpinic_flag='skip', readvar=readvar, data=veg_pp%wttopounit)
     
-    call restartvar(ncid=ncid, flag=flag, varname='pfts1d_wttopounit', xtype=ncd_double, &
-         dim1name='pft',                                                            &
-         long_name='pft weight relative to corresponding topounit', units='',         &
-         interpinic_flag='skip', readvar=readvar, data=veg_pp%wttopounit)
     ! Snow column variables
 
     call restartvar(ncid=ncid, flag=flag, varname='SNLSNO', xtype=ncd_int,  & 
