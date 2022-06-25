@@ -466,6 +466,10 @@ contains
             if (metdata_subed) then
                write(numstr, '(I4)') 1000+ztoget
                ierr = nf90_open(trim(metdata_bypass) // '/sub' // numstr(2:4) // '/' // trim(metdata_fname), NF90_NOWRITE, met_ncids(v))
+if (v==1) &
+print *,iam, 'checking sub-zoned metdata file: ', g, ztoget, gtoget, mindist, &
+ldomain%latc(g), ldomain%lonc(g),latixy(g3), longxy(g3), &
+trim(metdata_bypass) // '/sub' // numstr(2:4) // '/' // trim(metdata_fname)
                if (ierr .ne. 0) call endrun(msg=' ERROR: Failed to open cpl_bypass input meteorology file ' // &
                  trim(metdata_bypass) // '/sub' // numstr(2:4) // '/' // trim(metdata_fname) )
             else

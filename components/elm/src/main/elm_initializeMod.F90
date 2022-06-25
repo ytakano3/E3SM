@@ -199,6 +199,8 @@ contains
 #endif
 #endif
 
+print *, iam, 'checking domain size: ', ni, nj, ni_sum, nj_sum
+
     ! Exit early if no valid land points
     if ( all(amask == 0) )then
        if (masterproc) write(iulog,*) trim(subname)//': no valid land points do NOT run elm'
